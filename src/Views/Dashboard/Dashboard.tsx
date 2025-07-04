@@ -51,18 +51,24 @@ export default function Dashboard() {
 
   return (
     <div className={CLASSNAME.LAYOUT.WRAPPER}>
-      <textarea
-        value={text}
-        placeholder={TEXT.PLACEHOLDER.ENTER_TEXT_TO_TRANSLATE}
-        onChange={(e) => setText(e.target.value)}
-        className={CLASSNAME.LAYOUT.TEXT_AREA}
-      />
+      <div className={CLASSNAME.LAYOUT.TEXT_WRAPPER}>
+        <textarea
+          value={text}
+          placeholder={TEXT.PLACEHOLDER.ENTER_TEXT_TO_TRANSLATE}
+          className={CLASSNAME.LAYOUT.TEXT_AREA}
+          onChange={(e) => setText(e.target.value)}
+          onBlur={() => setText((prev) => prev.replace(/\s+/g, ' ').trim())}
+        />
+        <div className={CLASSNAME.LAYOUT.TEXT_LENGTH}>{text.length}</div>
+      </div>
 
-      <textarea
-        readOnly
-        value={isLoading ? TEXT.MESSAGES.TRANSLATING : translatedText}
-        className={CLASSNAME.LAYOUT.TRANSLATED_TEXT}
-      />
+     <div className={CLASSNAME.LAYOUT.TRANSLATED_TEXT_WRAPPER}>
+       <textarea
+          readOnly
+          value={isLoading ? TEXT.MESSAGES.TRANSLATING : translatedText}
+          className={CLASSNAME.LAYOUT.TRANSLATED_TEXT}
+       />
+   </div>
 
       {Boolean(error) && (
         <div className={CLASSNAME.LAYOUT.ERROR_FETCHING}>

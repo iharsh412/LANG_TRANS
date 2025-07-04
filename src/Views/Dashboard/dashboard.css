@@ -9,12 +9,19 @@
   padding: 2rem;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  gap: 2rem; /* Adds consistent spacing between child elements */
+  gap: 2rem;
+}
+
+.text-wrapper {
+  width: 80%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .text-area {
-  width: 80%;
-  max-width: 800px;
+  width: 100%; /* Takes full width of wrapper */
   min-height: 200px;
   padding: 1.5rem;
   border-radius: 8px;
@@ -24,7 +31,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
   transition: all 0.3s ease;
-  resize: vertical; /* Allows vertical resizing only */
+  resize: vertical;
 }
 
 .text-area:focus {
@@ -33,9 +40,17 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.translated-text {
+.translated-text-wrapper {
   width: 80%;
   max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative; /* For positioning error messages */
+}
+
+.translated-text {
+  width: 100%; /* Takes full width of wrapper */
   min-height: 200px;
   padding: 1.5rem;
   border-radius: 8px;
@@ -45,6 +60,44 @@
   font-size: 1rem;
   color: #333;
 }
-.error-fetching{
-    
+
+.error-fetching {
+  color: #d32f2f;
+  background-color: rgba(255, 235, 238, 0.8);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(211, 47, 47, 0.3);
+  width: 100%;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.text-length {
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: right;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(2px);
+  align-self: flex-end; /* Aligns to the right side of container */
+  transition: all 0.2s ease;
+}
+
+/* Optional: Add visual feedback when approaching character limits */
+.text-length.warning {
+  color: #ff9800;
+  background-color: rgba(255, 152, 0, 0.1);
+}
+
+.text-length.error {
+  color: #f44336;
+  background-color: rgba(244, 67, 54, 0.1);
 }
