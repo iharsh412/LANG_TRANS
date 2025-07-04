@@ -1,6 +1,6 @@
 import { Navigate } from 'react-router-dom';
-import { ROUTES_CONFIG, WILDCARD_ROUTES } from '../Shared/Constants';
-import Dashboard from '../Views/Dashboard/Dashboard';
+import { ROUTES_CONFIG, WILDCARD_ROUTES } from '../Shared/routes';
+import Dashboard from '../Views/Dashboard';
 import { CustomRouter } from './RootRoutes';
 
 // eslint-disable-next-line import/prefer-default-export

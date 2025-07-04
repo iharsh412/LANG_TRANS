@@ -13,6 +13,11 @@ const baseQuery: BaseQueryFn = fetchBaseQuery({
   baseUrl: API_BASE_URL,
   prepareHeaders: async (headers: Headers, { getState }) => {
     const { token } = (getState() as RootState).common;
+    headers.append(
+      'x-rapidapi-key',
+      '212186c2admsh777d25cc1393827p17b9a9jsn32cb1f68725e'
+    );
+    headers.append('x-rapidapi-host', 'free-google-translator.p.rapidapi.com');
     if (token) {
       headers.append('authorization', `${token}`);
     }

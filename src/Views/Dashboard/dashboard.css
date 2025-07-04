@@ -1,0 +1,50 @@
+.dashboard-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  gap: 2rem; /* Adds consistent spacing between child elements */
+}
+
+.text-area {
+  width: 80%;
+  max-width: 800px;
+  min-height: 200px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  resize: vertical; /* Allows vertical resizing only */
+}
+
+.text-area:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.translated-text {
+  width: 80%;
+  max-width: 800px;
+  min-height: 200px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #333;
+}
+.error-fetching{
+    
+}

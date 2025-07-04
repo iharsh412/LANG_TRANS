@@ -13,5 +13,9 @@ export default ({ mode }) => {
         typescript: true,
         overlay: true,
       })],
+      server:{
+        port: 3000,
+        open: true,
+      }
   });
 }
