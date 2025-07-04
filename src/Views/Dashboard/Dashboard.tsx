@@ -62,13 +62,13 @@ export default function Dashboard() {
         <div className={CLASSNAME.LAYOUT.TEXT_LENGTH}>{text.length}</div>
       </div>
 
-     <div className={CLASSNAME.LAYOUT.TRANSLATED_TEXT_WRAPPER}>
-       <textarea
+      <div className={CLASSNAME.LAYOUT.TRANSLATED_TEXT_WRAPPER}>
+        <textarea
           readOnly
           value={isLoading ? TEXT.MESSAGES.TRANSLATING : translatedText}
           className={CLASSNAME.LAYOUT.TRANSLATED_TEXT}
-       />
-   </div>
+        />
+      </div>
 
       {Boolean(error) && (
         <div className={CLASSNAME.LAYOUT.ERROR_FETCHING}>
